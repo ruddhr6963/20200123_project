@@ -28,18 +28,18 @@ import "./styles.css";
 // lime
 // gray
 
-const createColor = (value, color) =>
-  ({value, color});
+const createChart = (color, value) => ({ color, value });
 
-const arr = [];
-arr.push(createColor("cyan", 75));
-arr.push(createColor("yellow", 60));
-arr.push(createColor("red", 89));
-arr.push(createColor("lime", 42));
-arr.push(createColor("gray", 27));
+const charArr = [];
+charArr.push(createChart("cyan", 75));
+charArr.push(createChart("yellow", 60));
+charArr.push(createChart("red", 89));
+charArr.push(createChart("lime", 42));
+charArr.push(createChart("gray", 27));
 
-const tagArr = arr.map(item => '
-  <div class="bar bar-${item.value} ${item.color}">
+const tagArr = charArr.map(
+  item => `
+   <div class="bar bar-${item.value} ${item.color}">
     <div class="face side-0">
       <div class="growing-bar"></div>
     </div>
@@ -49,7 +49,7 @@ const tagArr = arr.map(item => '
     <div class="face top"></div>
     <div class="face floor"></div>
   </div>
-  '
+  `
 );
 
-document.getElementById("chart").innerHTML = tagArr.join("");
+document.getElementById("chart").innerHTML = tagArr.join("");
